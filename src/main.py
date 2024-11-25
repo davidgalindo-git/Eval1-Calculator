@@ -17,11 +17,18 @@ def ask_user_input():
 
     global operator
     # Get the operator from the user
-    operator = input("Enter an operator (+, -, *, /): ")
+    operator = input("Enter an operator (+, -, *, /, ^): ")
 
     global operand2
     # Get second operand from the user
     operand2 = ask_user_float_input("Enter the second operand: ")
+
+# Fonction puissance
+def maFonction(n, m):
+    somme = 1
+    for count in range(int(m)):
+        somme = somme * n
+    return somme
 
 def calculate(ope1, oper, ope2):
     # Perform the operation based on the operator
@@ -37,6 +44,8 @@ def calculate(ope1, oper, ope2):
                 print("Error: Division by zero is undefined.")
                 return
             res = ope1 / ope2
+        case '^':
+            res = maFonction(ope1, ope2)
         case _:
             print("Invalid operator.")
             return
