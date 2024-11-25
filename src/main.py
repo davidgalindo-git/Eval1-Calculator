@@ -7,10 +7,13 @@ def main():
     result = calculate(operand1, operator, operand2)
     display_result(operand1, operator, operand2, result)
 
+def ask_user_float_input(prompt):
+    return float(input(prompt))
+
 def ask_user_input():
     # Get first operand from the user
     global operand1
-    operand1 = float(input("Enter the first operand: "))
+    operand1 = ask_user_float_input("Enter the first operand: ")
 
     global operator
     # Get the operator from the user
@@ -18,7 +21,7 @@ def ask_user_input():
 
     global operand2
     # Get second operand from the user
-    operand2 = float(input("Enter the second operand: "))
+    operand2 = ask_user_float_input("Enter the second operand: ")
 
 def calculate(ope1, oper, ope2):
     # Perform the operation based on the operator
